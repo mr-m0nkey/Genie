@@ -5,10 +5,29 @@
  */
 package genie;
 
+import java.net.Socket;
+
 /**
  * Handles the connection
  * @author mayowa
  */
 public class Network {
+    
+    private static Socket socket;
+    private static String host = "localhost";
+    private static int port = 8000;
+    
+    private Network() {
+        
+    }
+    
+    public static Socket getSocket() {
+        if(socket == null) {
+            socket = new Socket(host, port);
+        }
+        return socket;
+    }
+    
+ 
     
 }
