@@ -28,7 +28,7 @@ public class FileImage implements IJSON {
         Callable<FileImage> callable = () -> {
             return new FileImage(pathToRoot);
         };
-        Future<FileImage> future = Store.getExecutor().submit(callable);
+        Future<FileImage> future = Genie.store.getExecutor().submit(callable);
         return future; 
     }
 
