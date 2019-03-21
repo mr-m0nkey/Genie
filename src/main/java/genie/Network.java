@@ -14,19 +14,19 @@ import java.net.Socket;
 public class Network {
     
     private static Socket socket;
-    private static String host = "localhost";
+    private static String host = "127.0.0.1";
     private static int port = 8000;
     
     private Network() {
         
     }
     
-    public static Socket getSocket() {
+    /*public static Socket getSocket() {
         if(socket == null) {
             socket = new Socket(host, port);
         }
         return socket;
-    }
+    }*/
     
  
     
