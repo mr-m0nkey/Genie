@@ -5,8 +5,12 @@
  */
 package genie;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import genie.JsonModels.FileImage;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -20,10 +24,16 @@ public class Genie {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
-        // TODO code application logic here
-        store = Store.getStore();
-        FileImage fileImage = FileImage.make("").get();
+    public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
+
+        String pathToRootDirectoriesJson = System.getProperty("user.dir") + "\\root.json";
+        String pathToFileImageJson = System.getProperty("user.dir") + "\\file_image.json";
+
+        FileImageBuilder fileImageBuilder = new FileImageBuilder();
+        FileImage fileImage = fileImageBuilder.build("C:\\Users\\mayowa\\Pictures\\iCloud Photos");
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(new File(pathToFileImageJson), fileImage);
     }
     
 }
