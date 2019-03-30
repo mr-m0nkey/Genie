@@ -33,6 +33,7 @@ public class JsonDirectory extends JsonFileRepresentation implements IJsonFile{
         ((JsonDirectory) jsonFile).setPath(file.getPath());
         ((JsonDirectory) jsonFile).setContent(file.listFiles());
         ((JsonDirectory) jsonFile).setFile(false);
+        ((JsonDirectory) jsonFile).setLastModified(file.lastModified());
         return jsonFile;
     }
 
@@ -43,6 +44,7 @@ public class JsonDirectory extends JsonFileRepresentation implements IJsonFile{
         String directoryName = getNameFromPath(file.getPath());
         ((JsonFile) jsonFile).setName(directoryName);
         ((JsonFile) jsonFile).setFile(true);
+        ((JsonFile) jsonFile).setLastModified(file.lastModified());
         return jsonFile;
     }
 

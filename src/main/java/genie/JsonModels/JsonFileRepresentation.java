@@ -5,6 +5,16 @@ public abstract class JsonFileRepresentation implements IJsonFile {
     private String path;
     private String name;
     private boolean isFile;
+    private long lastModified;
+
+
+    public long getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(long lastModified) {
+        this.lastModified = lastModified;
+    }
 
     public boolean isFile() {
         return isFile;
