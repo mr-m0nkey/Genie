@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaces;
+package genie.JsonModels;
 
 /**
- *
+ * Stores a mirror of the file system
  * @author mayowa
  */
-public interface IJSON {
-    public String toJson();
+public class FileImage {
+    
+
+    
 }

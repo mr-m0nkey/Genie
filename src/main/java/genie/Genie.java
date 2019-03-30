@@ -5,6 +5,8 @@
  */
 package genie;
 
+import genie.JsonModels.FileImage;
+
 import java.util.concurrent.ExecutionException;
 
 /**
