@@ -28,7 +28,7 @@ public class FileImageBuilder {
             return fileImage;
         };
 
-        Future<FileImage> fileImageFuture = Genie.store.getExecutor().submit(callable);
+        Future<FileImage> fileImageFuture = Store.getStore().getExecutor().submit(callable);
         return fileImageFuture;
 
     }

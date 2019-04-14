@@ -5,12 +5,15 @@
  */
 package genie.JsonModels;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.File;
 
 /**
  * Stores a mirror of the file system
  * @author mayowa
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class FileImage {
 
     private JsonDirectory root;

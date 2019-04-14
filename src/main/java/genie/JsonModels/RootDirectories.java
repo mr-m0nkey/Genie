@@ -1,14 +1,20 @@
 package genie.JsonModels;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.File;
+import java.util.Map;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RootDirectories {
 
-    private String[] directories;
+    private Map<String, FileImage> directories;
 
-    public String[] getDirectories() {
+    public Map<String, FileImage> getDirectories() {
         return directories;
     }
 
-    public void setDirectories(String[] directories) {
+    public void setDirectories(Map<String, FileImage> directories) {
         this.directories = directories;
     }
 

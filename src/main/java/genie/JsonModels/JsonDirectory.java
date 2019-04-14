@@ -17,16 +17,17 @@ public class JsonDirectory extends JsonFileRepresentation implements IJsonFile{
         for(File file : directory) {
             IJsonFile jsonFile;
             if(file.isFile()) {
-                jsonFile = getiJsonFile(file);
+                jsonFile = getiJsonFile(file.getPath());
             } else {
-                jsonFile = getiJsonDirectory(file);
+                jsonFile = getiJsonDirectory(file.getPath());
             }
             content.add(jsonFile);
         }
         this.content = content;
     }
 
-    private IJsonFile getiJsonDirectory(File file) {
+    private IJsonFile getiJsonDirectory(String filePath) {
+        File file = new File(filePath);
         IJsonFile jsonFile;
         jsonFile = new JsonDirectory();
         ((JsonDirectory) jsonFile).setName(file.getName());
@@ -37,7 +38,8 @@ public class JsonDirectory extends JsonFileRepresentation implements IJsonFile{
         return jsonFile;
     }
 
-    private IJsonFile getiJsonFile(File file) {
+    private IJsonFile getiJsonFile(String filePath) {
+        File file = new File(filePath);
         IJsonFile jsonFile;
         jsonFile = new JsonFile();
         ((JsonFile) jsonFile).setPath(file.getPath());

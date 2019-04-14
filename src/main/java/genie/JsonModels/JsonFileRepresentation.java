@@ -1,5 +1,8 @@
 package genie.JsonModels;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class JsonFileRepresentation implements IJsonFile {
 
     private String path;
