@@ -8,21 +8,31 @@ import genie.JsonModels.JsonFile;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 
 public class FileImageBuilder {
 
-    public FileImage build(String pathToRoot) {
-        FileImage fileImage = new FileImage();
+    public Future<FileImage> build(String pathToRoot) { //TODO use futures to make it concurrent
 
-        File rootFolder = new File(pathToRoot);
-        JsonDirectory rootJsonDirectory = new JsonDirectory();
-        rootJsonDirectory.setPath(rootFolder.getPath());
-        rootJsonDirectory.setContent(rootFolder.listFiles());
-        rootJsonDirectory.setFile(true);
+        Callable<FileImage> callable = () -> {
+            FileImage fileImage = new FileImage();
 
-        fileImage.setRoot(rootJsonDirectory);
-        return fileImage;
+            File rootFolder = new File(pathToRoot);
+            JsonDirectory rootJsonDirectory = new JsonDirectory();
+            rootJsonDirectory.setPath(rootFolder.getPath());
+            rootJsonDirectory.setContent(rootFolder.listFiles());
+            rootJsonDirectory.setFile(true);
+
+            fileImage.setRoot(rootJsonDirectory);
+            return fileImage;
+        };
+
+        Future<FileImage> fileImageFuture = Genie.store.getExecutor().submit(callable);
+        return fileImageFuture;
+
     }
+
 
 
 
