@@ -11,6 +11,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import genie.JsonModels.FileImage;
 import genie.JsonModels.RootDirectories;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,12 +27,19 @@ import java.util.logging.Logger;
  *
  * @author mayowa
  */
+@SpringBootApplication
 public class Genie {
+
+
+    @Autowired
+    private ObjectMapper mapper;
+
+    @Autowired
+    private RootDirectories rootDirectories;
+
 
     //TODO  windows filepath (\\) | Mac filepath (/)
 
-    public static RootDirectories rootDirectories = new RootDirectories();
-    public static ObjectMapper mapper = new ObjectMapper();
     public static FileImageBuilder fileImageBuilder = new FileImageBuilder();
     private static final Logger logger = Logger.getLogger(Genie.class.getName());
 
@@ -37,16 +48,23 @@ public class Genie {
      */
     public static void main(String[] args)  {
 
-        mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET, false);
-        //TODO handle exceptions
-        init();
+        SpringApplication.run(Genie.class, args);
+
 
 
     }
 
-    private static void init() {
+    @Bean
+    public ObjectMapper getObjectMapper() {
+        return new ObjectMapper();
+    }
+
+    @Bean
+    public RootDirectories getRootDirectories() {
+        RootDirectories rootDirectories = null;
+
         try {
-            initializeRootDirectories();
+            rootDirectories = initializeRootDirectories();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -55,38 +73,41 @@ public class Genie {
             e.printStackTrace();
         }
 
+        return rootDirectories;
     }
 
 
-    private static void initializeRootDirectories() throws IOException, ExecutionException, InterruptedException {
+
+    private RootDirectories initializeRootDirectories() throws IOException, ExecutionException, InterruptedException {
         String pathToRootDirectoriesJson = System.getProperty("user.dir") + "/root.json";
         File rootJson = new File(pathToRootDirectoriesJson);
         if(rootJson.createNewFile()) {
             mapper.writeValue(rootJson, new RootDirectories());
         }
 
-        rootDirectories = mapper.readValue(rootJson, RootDirectories.class);
+        RootDirectories rootDirectories = mapper.readValue(rootJson, RootDirectories.class);
 
         if(rootDirectories.getDirectories() == null) {
             System.out.print("Add a root directory: ");
             Scanner scanner = new Scanner(System.in);
             String newRootPath = scanner.nextLine();
             scanner.close();
-            addRootPath(newRootPath);
-            updateRootJsonFile();
+            addRootPath(newRootPath, rootDirectories);
+            updateRootJsonFile(rootDirectories);
         }
 
+        return rootDirectories;
     }
 
 
 
-    private static void updateRootJsonFile() throws IOException {
+    private void updateRootJsonFile(RootDirectories rootDirectories) throws IOException {
         String pathToRootDirectoriesJson = System.getProperty("user.dir") + "//root.json";
         File rootJson = new File(pathToRootDirectoriesJson);
         mapper.writerWithDefaultPrettyPrinter().writeValue(rootJson, rootDirectories);
     }
 
-    private static void addRootPath(String newRootPath) throws ExecutionException, InterruptedException {
+    private void addRootPath(String newRootPath, RootDirectories rootDirectories) throws ExecutionException, InterruptedException {
         Map<String, FileImage> temporaryMap = rootDirectories.getDirectories();
         if(temporaryMap == null) {
             temporaryMap = new HashMap<>();
