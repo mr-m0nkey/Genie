@@ -1,6 +1,8 @@
 package genie;
 
 import genie.JsonModels.*;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,9 +10,10 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
+@Service
 public class FileImageBuilder {
 
-    public Future<FileImage> build(String pathToRoot) { //TODO use futures to make it concurrent
+    public Future<FileImage> build(String pathToRoot) {
 
         Callable<FileImage> callable = () -> {
             FileImage fileImage = new FileImage();

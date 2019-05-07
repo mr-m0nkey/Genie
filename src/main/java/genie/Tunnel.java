@@ -8,7 +8,8 @@ package genie;
 import java.util.Queue;
 
 /**
- * Queues commands and handles execution
+ * Queues commands and handles execution,
+ * TODO run on a separate thread
  * @author mayowa
  */
 public class Tunnel {

@@ -7,7 +7,6 @@ package genie.JsonModels;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.io.File;
 
 /**
  * Stores a mirror of the file system
