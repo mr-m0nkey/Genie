@@ -1,9 +1,6 @@
 package genie;
 
-import genie.JsonModels.FileImage;
-import genie.JsonModels.IJsonFile;
-import genie.JsonModels.JsonDirectory;
-import genie.JsonModels.JsonFile;
+import genie.JsonModels.*;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,7 +18,7 @@ public class FileImageBuilder {
             File rootFolder = new File(pathToRoot);
             JsonDirectory rootJsonDirectory = new JsonDirectory();
             rootJsonDirectory.setPath(rootFolder.getPath());
-            rootJsonDirectory.setContent(rootFolder.listFiles());
+            rootJsonDirectory.setContent(setContent(rootFolder.listFiles()));
             rootJsonDirectory.setFile(true);
 
             fileImage.setRoot(rootJsonDirectory);
@@ -31,6 +28,53 @@ public class FileImageBuilder {
         Future<FileImage> fileImageFuture = Store.getStore().getExecutor().submit(callable);
         return fileImageFuture;
 
+    }
+
+
+
+    public List<JsonFileRepresentation> setContent(File[] directory) {
+        List<JsonFileRepresentation> content = new ArrayList<>();
+        for(File file : directory) {
+            JsonFileRepresentation jsonFile;
+            if(file.isFile()) {
+                jsonFile = getiJsonFile(file.getPath());
+            } else {
+                jsonFile = getiJsonDirectory(file.getPath());
+            }
+            content.add(jsonFile);
+        }
+        return content;
+    }
+
+    private JsonFileRepresentation getiJsonDirectory(String filePath) {
+        File file = new File(filePath);
+        JsonFileRepresentation jsonFile;
+        jsonFile = new JsonDirectory();
+        jsonFile.setName(file.getName());
+        jsonFile.setPath(file.getPath());
+        ((JsonDirectory) jsonFile).setContent(setContent(file.listFiles()));
+        jsonFile.setFile(false);
+        jsonFile.setLastModified(file.lastModified());
+        return jsonFile;
+    }
+
+    private JsonFileRepresentation getiJsonFile(String filePath) {
+        File file = new File(filePath);
+        JsonFileRepresentation jsonFile;
+        jsonFile = new JsonFile();
+        jsonFile.setPath(file.getPath());
+        String directoryName = getNameFromPath(file.getPath());
+        jsonFile.setName(directoryName);
+        jsonFile.setFile(true);
+        jsonFile.setLastModified(file.lastModified());
+        return jsonFile;
+    }
+
+    private String getNameFromPath(String path) {
+        String name = "";
+        String[] pathArray = path.split("/");
+        name = pathArray[pathArray.length - 1];
+        return name;
     }
 
 

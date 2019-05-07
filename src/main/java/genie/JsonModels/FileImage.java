@@ -25,4 +25,5 @@ public class FileImage {
     public void setRoot(JsonDirectory root) {
         this.root = root;
     }
+
 }

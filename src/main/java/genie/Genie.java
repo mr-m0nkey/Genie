@@ -5,6 +5,7 @@
  */
 package genie;
 
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,19 +24,20 @@ import java.util.logging.Logger;
  * @author mayowa
  */
 public class Genie {
-    
-    public static Store store;
+
+    //TODO  windows filepath (\\) | Mac filepath (/)
+
     public static RootDirectories rootDirectories = new RootDirectories();
     public static ObjectMapper mapper = new ObjectMapper();
-    public static String pathToFileImageJson = System.getProperty("user.dir") + "\\file_image.json";
     public static FileImageBuilder fileImageBuilder = new FileImageBuilder();
-    public static List<FileImage> fileImageList = new ArrayList<>();
     private static final Logger logger = Logger.getLogger(Genie.class.getName());
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args)  {
 
+        mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET, false);
         //TODO handle exceptions
         init();
 
@@ -57,7 +59,7 @@ public class Genie {
 
 
     private static void initializeRootDirectories() throws IOException, ExecutionException, InterruptedException {
-        String pathToRootDirectoriesJson = System.getProperty("user.dir") + "\\root.json";
+        String pathToRootDirectoriesJson = System.getProperty("user.dir") + "/root.json";
         File rootJson = new File(pathToRootDirectoriesJson);
         if(rootJson.createNewFile()) {
             mapper.writeValue(rootJson, new RootDirectories());
@@ -69,6 +71,7 @@ public class Genie {
             System.out.print("Add a root directory: ");
             Scanner scanner = new Scanner(System.in);
             String newRootPath = scanner.nextLine();
+            scanner.close();
             addRootPath(newRootPath);
             updateRootJsonFile();
         }
@@ -78,7 +81,7 @@ public class Genie {
 
 
     private static void updateRootJsonFile() throws IOException {
-        String pathToRootDirectoriesJson = System.getProperty("user.dir") + "\\root.json";
+        String pathToRootDirectoriesJson = System.getProperty("user.dir") + "//root.json";
         File rootJson = new File(pathToRootDirectoriesJson);
         mapper.writerWithDefaultPrettyPrinter().writeValue(rootJson, rootDirectories);
     }
