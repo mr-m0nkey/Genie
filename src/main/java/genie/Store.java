@@ -15,8 +15,8 @@ import java.util.concurrent.Executors;
  * @author mayowa
  */
 @Component
+//TODO remove this class
 public class Store {
-
 
     private ExecutorService singleThreadExecutorService;
     private ExecutorService parallelThreadExecutorService;

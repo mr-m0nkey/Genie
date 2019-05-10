@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import genie.models.json.FileImage;
 import genie.models.json.RootDirectories;
 import genie.util.CommandComparator;
+import net.contentobjects.jnotify.JNotify;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -96,14 +97,6 @@ public class Genie {
         //commands are stored in a priority queue sorted by date so they are executed in a chronological order
         Queue<Command> commandsToExecute = new PriorityQueue(new CommandComparator());
         return commandsToExecute;
-    }
-
-    @Bean
-    WatchService getWatchService() throws Exception{ //TODO handle exception
-        WatchService watchService = FileSystems.getDefault().newWatchService();
-
-
-        return watchService;
     }
 
 

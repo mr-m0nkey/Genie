@@ -1,59 +1,39 @@
 package genie;
 
 import genie.models.json.RootDirectories;
+import net.contentobjects.jnotify.JNotify;
+import net.contentobjects.jnotify.JNotifyException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.nio.file.*;
+import java.util.Queue;
 
 @Service
 public class FileWatcher {
 
 
+
     @Autowired
-    WatchService watchService;
+    Queue<Command> commandQueue;
 
 
+    //@Async
+    public void getChangesInRootAndPopulateCommandQueue(String p) {
 
+        int mask = JNotify.FILE_CREATED  |
+                JNotify.FILE_DELETED  |
+                JNotify.FILE_MODIFIED |
+                JNotify.FILE_RENAMED;
 
-    @Async
-    public void getChangesInRoot(String p) {
+        // watch subtree?
+        boolean watchSubtree = true;
 
-        System.out.println(p);
-        Path path = Paths.get(p);
-
-
+        // add actual watch
         try {
-            path.register(
-                    watchService,
-                    StandardWatchEventKinds.ENTRY_CREATE,
-                    StandardWatchEventKinds.ENTRY_DELETE,
-                    StandardWatchEventKinds.ENTRY_MODIFY);
-
-
-            WatchKey key;
-            while ((key = watchService.take()) != null) {
-                for (WatchEvent<?> event : key.pollEvents()) {
-                    System.out.println(
-                            "Event kind:" + event.kind()
-                                    + ". File affected: " + event.context() + ".");
-                }
-                key.reset();
-            }
-
-
-
-        } catch (IOException e) {
-
-
-
-        } catch (InterruptedException e) {
+            int watchID = JNotify.addWatch(p, mask, watchSubtree, new FileListener());
+        } catch (JNotifyException e) {
 
         }
+
 
 
     }
