@@ -5,6 +5,8 @@
  */
 package genie;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Queue;
 
 /**
@@ -12,6 +14,7 @@ import java.util.Queue;
  * TODO run on a separate thread
  * @author mayowa
  */
+@Component
 public class Tunnel {
     
     Queue<Command> commands;

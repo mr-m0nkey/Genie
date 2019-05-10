@@ -1,4 +1,4 @@
-package genie.JsonModels;
+package genie.models.json;
 
 import java.util.List;
 

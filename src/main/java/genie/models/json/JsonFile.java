@@ -1,4 +1,4 @@
-package genie.JsonModels;
+package genie.models.json;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

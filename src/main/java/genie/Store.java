@@ -5,7 +5,8 @@
  */
 package genie;
 
-import java.util.ArrayList;
+import org.springframework.stereotype.Component;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -13,36 +14,23 @@ import java.util.concurrent.Executors;
  *
  * @author mayowa
  */
+@Component
 public class Store {
-    
-    private ArrayList<String> rootDirectories;
-    private static Store store;
-    private ExecutorService executorService;
-    
+
+
+    private ExecutorService singleThreadExecutorService;
+    private ExecutorService parallelThreadExecutorService;
+
     private Store() {
-        rootDirectories = new ArrayList();
-        executorService = Executors.newSingleThreadExecutor();
+        singleThreadExecutorService = Executors.newSingleThreadExecutor();
+        parallelThreadExecutorService = Executors.newFixedThreadPool(3);
     }
+
     
-    public static Store getStore() {
-        if(store == null) {
-            store = new Store();
-            
-        }
-        return store;
+    public ExecutorService getTunnelThread() {
+        return singleThreadExecutorService;
     }
-    
-    public boolean addRoot(String pathToRoot) {
-        pathToRoot = pathToRoot.toLowerCase();
-        if(rootDirectories.contains(pathToRoot)) {
-            return false;
-        }
-        rootDirectories.add(pathToRoot);
-        return true;
-    }
-    
-    public ExecutorService getExecutor() {
-        return executorService;
-    }
+
+    public ExecutorService getThreadPool() { return parallelThreadExecutorService; }
     
 }

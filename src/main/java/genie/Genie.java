@@ -5,22 +5,27 @@
  */
 package genie;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import genie.JsonModels.FileImage;
-import genie.JsonModels.RootDirectories;
+import genie.models.json.FileImage;
+import genie.models.json.RootDirectories;
+import genie.util.CommandComparator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
+import java.util.concurrent.Executor;
 import java.util.logging.Logger;
 
 /**
@@ -28,6 +33,8 @@ import java.util.logging.Logger;
  * @author mayowa
  */
 @SpringBootApplication
+@EnableScheduling
+@EnableAsync
 public class Genie {
 
 
@@ -35,12 +42,10 @@ public class Genie {
     private ObjectMapper mapper;
 
     @Autowired
-    private RootDirectories rootDirectories;
-
+    private FileImageBuilder fileImageBuilder;
 
     //TODO  windows filepath (\\) | Mac filepath (/)
 
-    public static FileImageBuilder fileImageBuilder = new FileImageBuilder();
     private static final Logger logger = Logger.getLogger(Genie.class.getName());
 
     /**
@@ -51,8 +56,19 @@ public class Genie {
         SpringApplication.run(Genie.class, args);
 
 
-
     }
+
+    @Bean
+    public Executor taskExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(2);
+        executor.setMaxPoolSize(2);
+        executor.setQueueCapacity(500);
+        executor.setThreadNamePrefix("GithubLookup-");
+        executor.initialize();
+        return executor;
+    }
+
 
     @Bean
     public ObjectMapper getObjectMapper() {
@@ -61,8 +77,7 @@ public class Genie {
 
     @Bean
     public RootDirectories getRootDirectories() {
-        RootDirectories rootDirectories = null;
-
+        RootDirectories rootDirectories = new RootDirectories();
         try {
             rootDirectories = initializeRootDirectories();
         } catch (IOException e) {
@@ -74,6 +89,21 @@ public class Genie {
         }
 
         return rootDirectories;
+    }
+
+    @Bean
+    public Queue<Command> getCommandQueue() {
+        //commands are stored in a priority queue sorted by date so they are executed in a chronological order
+        Queue<Command> commandsToExecute = new PriorityQueue(new CommandComparator());
+        return commandsToExecute;
+    }
+
+    @Bean
+    WatchService getWatchService() throws Exception{ //TODO handle exception
+        WatchService watchService = FileSystems.getDefault().newWatchService();
+
+
+        return watchService;
     }
 
 
@@ -88,17 +118,21 @@ public class Genie {
         RootDirectories rootDirectories = mapper.readValue(rootJson, RootDirectories.class);
 
         if(rootDirectories.getDirectories() == null) {
+            //TODO find another way to handle this rather than using the command line
             System.out.print("Add a root directory: ");
             Scanner scanner = new Scanner(System.in);
             String newRootPath = scanner.nextLine();
             scanner.close();
-            addRootPath(newRootPath, rootDirectories);
-            updateRootJsonFile(rootDirectories);
+            addRootToJsonFile(rootDirectories, newRootPath);
         }
 
         return rootDirectories;
     }
 
+    private void addRootToJsonFile(RootDirectories rootDirectories, String newRootPath) throws ExecutionException, InterruptedException, IOException {
+        addRootPath(newRootPath, rootDirectories);
+        updateRootJsonFile(rootDirectories);
+    }
 
 
     private void updateRootJsonFile(RootDirectories rootDirectories) throws IOException {

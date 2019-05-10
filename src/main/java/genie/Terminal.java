@@ -5,6 +5,8 @@
  */
 package genie;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Used to access the terminal
  * @author mayowa

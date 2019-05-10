@@ -1,10 +1,11 @@
 package genie;
 
-import genie.JsonModels.*;
-import org.springframework.stereotype.Component;
+import genie.models.json.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.nio.file.WatchService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -12,6 +13,9 @@ import java.util.concurrent.Future;
 
 @Service
 public class FileImageBuilder {
+
+    @Autowired
+    Store store;
 
     public Future<FileImage> build(String pathToRoot) {
 
@@ -23,12 +27,11 @@ public class FileImageBuilder {
             rootJsonDirectory.setPath(rootFolder.getPath());
             rootJsonDirectory.setContent(setContent(rootFolder.listFiles()));
             rootJsonDirectory.setFile(true);
-
             fileImage.setRoot(rootJsonDirectory);
             return fileImage;
         };
 
-        Future<FileImage> fileImageFuture = Store.getStore().getExecutor().submit(callable);
+        Future<FileImage> fileImageFuture = store.getTunnelThread().submit(callable);
         return fileImageFuture;
 
     }

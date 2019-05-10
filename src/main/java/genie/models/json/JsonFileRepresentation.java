@@ -1,4 +1,4 @@
-package genie.JsonModels;
+package genie.models.json;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,7 +10,6 @@ public class JsonFileRepresentation implements IJsonFile {
     private String name;
     private boolean isFile;
     private long lastModified;
-
 
     public long getLastModified() {
         return lastModified;
@@ -44,4 +43,5 @@ public class JsonFileRepresentation implements IJsonFile {
     public void setName(String name) {
         this.name = name;
     }
+
 }
