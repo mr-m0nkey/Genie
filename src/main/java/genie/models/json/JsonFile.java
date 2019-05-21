@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-//TODO make abstract
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JsonFile {
 

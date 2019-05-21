@@ -5,7 +5,9 @@
  */
 package genie;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Queue;
 
@@ -14,7 +16,7 @@ import java.util.Queue;
  * TODO run on a separate thread
  * @author mayowa
  */
-@Component
+@Service
 public class Tunnel {
     
     Queue<Command> commands;
@@ -32,6 +34,7 @@ public class Tunnel {
     /**
      *
      */
+    @Async
     public void loop() {
         while(!commands.isEmpty()) {
             if(commands.peek().perform()) {

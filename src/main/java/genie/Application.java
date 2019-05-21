@@ -23,7 +23,7 @@ public class Application implements ApplicationListener<ContextRefreshedEvent> {
 
     public void watchRootFilesForChanges() {
         rootDirectories.getRoots().forEach(pathToRoot -> {
-            fileWatcher.getChangesInRootAndPopulateCommandQueue(pathToRoot);
+            fileWatcher.setupFileListener(pathToRoot);
         });
     }
 

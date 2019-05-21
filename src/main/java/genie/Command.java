@@ -13,22 +13,59 @@ import java.util.Date;
  */
 public class Command {
 
-    private Date date;
-
-    public void setDate(Date date) {
-        this.date = date;
+    public enum COMMAND_TYPE {
+        RENAMED,
+        MODIFIED,
+        DELETED,
+        CREATED
     }
+
+    private Date date;
+    private COMMAND_TYPE commandType;
+    private String rootDirectory;
+    private String formerFilePath;
+    private String filePath;
 
     public Date getDate() {
         return date;
     }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
+    public COMMAND_TYPE getCommandType() {
+        return commandType;
+    }
 
-    /**
-     * Command from remote user
-     * @return
-     */
+    public void setCommandType(COMMAND_TYPE commandType) {
+        this.commandType = commandType;
+    }
+
+    public String getRootDirectory() {
+        return rootDirectory;
+    }
+
+    public void setRootDirectory(String rootDirectory) {
+        this.rootDirectory = rootDirectory;
+    }
+
+    public String getFormerFilePath() {
+        return formerFilePath;
+    }
+
+    public void setFormerFilePath(String formerFilePath) {
+        this.formerFilePath = formerFilePath;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
     public boolean perform() {
         
         return true;
