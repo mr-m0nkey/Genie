@@ -2,6 +2,8 @@ package genie.models.json;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+
 //TODO make abstract
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class JsonFileRepresentation implements IJsonFile {
@@ -10,6 +12,8 @@ public class JsonFileRepresentation implements IJsonFile {
     private String name;
     private boolean isFile;
     private long lastModified;
+    private List<JsonFileRepresentation> content;
+
 
     public long getLastModified() {
         return lastModified;
