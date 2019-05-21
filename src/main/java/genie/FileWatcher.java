@@ -1,6 +1,5 @@
 package genie;
 
-import genie.models.json.RootDirectories;
 import net.contentobjects.jnotify.JNotify;
 import net.contentobjects.jnotify.JNotifyException;
 import org.springframework.beans.factory.annotation.Autowired;
