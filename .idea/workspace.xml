@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6416e3c1-a061-4ab9-8b66-458e47fe7f0f" name="Default" comment="publish jnotify branch">
+    <list default="true" id="6416e3c1-a061-4ab9-8b66-458e47fe7f0f" name="Default" comment="file image builder crawls through subfolders">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/genie/FileListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/FileListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonFileRepresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonFileRepresentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/FileImageBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/genie/FileImageBuilder.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,10 +24,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/Genie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1167">
+              <caret line="134" column="5" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="134" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="205">
+              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#567#568#0" expanded="true" />
@@ -31,10 +47,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileWatcher.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="205">
+              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,14 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileListener.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/root.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="92">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -57,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="944">
+              <caret line="68" column="45" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,44 +80,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="9" selection-start-line="8" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#247#248#0" expanded="true" />
-                <element signature="e#734#735#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonFileRepresentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="122">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,12 +92,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/JNotifyConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="115">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding>
-                <element signature="e#187#188#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,6 +119,7 @@
       <find>scann</find>
       <find>ijsonfil</find>
       <find>add a</find>
+      <find>untit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,29 +156,30 @@
         <option value="$PROJECT_DIR$/src/main/java/genie/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/util/DateComparator.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/util/CommandComparator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/ThreadConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/MyThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Test2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/AsynchronousService.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/AsyncTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Store.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/JNotifyConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/FileWatcher.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/root.json" />
         <option value="$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/models/json/JsonFileRepresentation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/FileListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" />
       </list>
     </option>
   </component>
@@ -282,7 +263,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558440344034" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558443827812" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Clear" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -395,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557505893985</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="file image builder crawls through subfolders">
+      <created>1558440390838</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558440390838</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -411,7 +399,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -421,7 +409,7 @@
       <window_info id="DB Browser" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.6012048" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4795181" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4795181" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994812" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -429,7 +417,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -477,7 +465,8 @@
     <MESSAGE value="File image crawl/creation login moved to file image builder" />
     <MESSAGE value="added a scheduler" />
     <MESSAGE value="publish jnotify branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="publish jnotify branch" />
+    <MESSAGE value="file image builder crawls through subfolders" />
+    <option name="LAST_COMMIT_MESSAGE" value="file image builder crawls through subfolders" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Applocation.java" />
@@ -556,13 +545,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/AsyncTask.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Genie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="113" column="14" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/lightbend/play/jnotify/0.94-play-2/jnotify-0.94-play-2.jar!/net/contentobjects/jnotify/JNotify.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-766">
@@ -581,26 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -625,13 +587,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileWatcher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="75">
+          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding>
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="944">
+          <caret line="68" column="45" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Genie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1167">
+          <caret line="134" column="5" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="134" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -645,48 +642,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileWatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        <state relative-caret-position="281">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonDirectory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-end-line="9" />
+        <state relative-caret-position="122">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonFileRepresentation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="115">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -695,29 +674,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/root.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="92">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/JsonFileRepresentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="15">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        <state relative-caret-position="205">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
           </folding>
         </state>
       </provider>

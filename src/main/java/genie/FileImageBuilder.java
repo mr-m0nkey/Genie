@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.nio.file.WatchService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -23,7 +22,7 @@ public class FileImageBuilder {
             FileImage fileImage = new FileImage();
 
             File rootFolder = new File(pathToRoot);
-            JsonDirectory rootJsonDirectory = new JsonDirectory();
+            JsonFile rootJsonDirectory = new JsonFile();
             rootJsonDirectory.setPath(rootFolder.getPath());
             rootJsonDirectory.setContent(setContent(rootFolder.listFiles()));
             rootJsonDirectory.setFile(true);
@@ -38,10 +37,10 @@ public class FileImageBuilder {
 
 
 
-    public List<JsonFileRepresentation> setContent(File[] directory) {
-        List<JsonFileRepresentation> content = new ArrayList<>();
+    public List<JsonFile> setContent(File[] directory) {
+        List<JsonFile> content = new ArrayList<>();
         for(File file : directory) {
-            JsonFileRepresentation jsonFile;
+            JsonFile jsonFile;
             if(file.isFile()) {
                 jsonFile = getiJsonFile(file.getPath());
             } else {
@@ -52,21 +51,21 @@ public class FileImageBuilder {
         return content;
     }
 
-    private JsonFileRepresentation getiJsonDirectory(String filePath) {
+    private JsonFile getiJsonDirectory(String filePath) {
         File file = new File(filePath);
-        JsonFileRepresentation jsonFile;
-        jsonFile = new JsonDirectory();
+        JsonFile jsonFile;
+        jsonFile = new JsonFile();
         jsonFile.setName(file.getName());
         jsonFile.setPath(file.getPath());
-        ((JsonDirectory) jsonFile).setContent(setContent(file.listFiles()));
+        ((JsonFile) jsonFile).setContent(setContent(file.listFiles()));
         jsonFile.setFile(false);
         jsonFile.setLastModified(file.lastModified());
         return jsonFile;
     }
 
-    private JsonFileRepresentation getiJsonFile(String filePath) {
+    private JsonFile getiJsonFile(String filePath) {
         File file = new File(filePath);
-        JsonFileRepresentation jsonFile;
+        JsonFile jsonFile;
         jsonFile = new JsonFile();
         jsonFile.setPath(file.getPath());
         String directoryName = getNameFromPath(file.getPath());

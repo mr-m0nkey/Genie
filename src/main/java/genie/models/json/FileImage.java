@@ -15,13 +15,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FileImage {
 
-    private JsonDirectory root;
+    private JsonFile root;
 
-    public JsonDirectory getRoot() {
+    public JsonFile getRoot() {
         return root;
     }
 
-    public void setRoot(JsonDirectory root) {
+    public void setRoot(JsonFile root) {
         this.root = root;
     }
 

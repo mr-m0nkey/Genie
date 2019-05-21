@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -26,9 +27,8 @@ public class ScheduledTasks {
     @Autowired
     RootDirectories rootDirectories;
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 10000)
     public void syncWithServer() {
-
         getCommandsFromServer();
         sendCommandsToServer();
 
