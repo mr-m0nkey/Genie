@@ -1,5 +1,6 @@
 package genie;
 
+import genie.enums.COMMAND_TYPE;
 import genie.models.json.RootDirectories;
 import net.contentobjects.jnotify.JNotifyListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ class FileListener implements JNotifyListener {
 
         Command command = new Command();
 
-        command.setCommandType(Command.COMMAND_TYPE.RENAMED);
+        command.setCommandType(COMMAND_TYPE.RENAMED);
         command.setDate(new Date());
         command.setRootDirectory(rootPath);
 
@@ -44,7 +45,7 @@ class FileListener implements JNotifyListener {
 
         Command command = new Command();
 
-        command.setCommandType(Command.COMMAND_TYPE.MODIFIED);
+        command.setCommandType(COMMAND_TYPE.MODIFIED);
         command.setDate(new Date());
         command.setRootDirectory(rootPath);
 
@@ -62,7 +63,7 @@ class FileListener implements JNotifyListener {
 
         Command command = new Command();
 
-        command.setCommandType(Command.COMMAND_TYPE.DELETED);
+        command.setCommandType(COMMAND_TYPE.DELETED);
         command.setDate(new Date());
         command.setRootDirectory(rootPath);
 
@@ -78,7 +79,7 @@ class FileListener implements JNotifyListener {
 
         Command command = new Command();
 
-        command.setCommandType(Command.COMMAND_TYPE.CREATED);
+        command.setCommandType(COMMAND_TYPE.CREATED);
         command.setDate(new Date());
         command.setRootDirectory(rootPath);
 

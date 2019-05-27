@@ -38,7 +38,6 @@ import java.util.logging.Logger;
 @EnableAsync
 public class Genie {
 
-
     @Autowired
     private ObjectMapper mapper;
 

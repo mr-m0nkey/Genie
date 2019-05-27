@@ -5,6 +5,9 @@
  */
 package genie;
 
+import genie.enums.COMMAND_TYPE;
+import genie.models.pojos.DeviceDetails;
+
 import java.util.Date;
 
 /**
@@ -13,18 +16,24 @@ import java.util.Date;
  */
 public class Command {
 
-    public enum COMMAND_TYPE {
-        RENAMED,
-        MODIFIED,
-        DELETED,
-        CREATED
-    }
-
     private Date date;
     private COMMAND_TYPE commandType;
     private String rootDirectory;
     private String formerFilePath;
     private String filePath;
+    private String deviceId;
+
+    public Command() {
+        deviceId = DeviceDetails.getDeviceId();
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
 
     public Date getDate() {
         return date;
