@@ -2,18 +2,14 @@ package genie;
 
 import net.contentobjects.jnotify.JNotify;
 import net.contentobjects.jnotify.JNotifyException;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import java.util.Queue;
 
 @Service
 public class FileWatcher {
 
-
-
-    @Autowired
-    Queue<Command> commandQueue;
-
+    private static final Logger logger = LoggerFactory.getLogger(FileWatcher.class);
 
     public void setupFileListener(String p) {
 
@@ -25,10 +21,9 @@ public class FileWatcher {
         boolean watchSubtree = true;
 
         try {
-            int watchID = JNotify.addWatch(p, mask, watchSubtree, new FileListener());
+            JNotify.addWatch(p, mask, watchSubtree, new FileListener());
         } catch (JNotifyException e) {
-            //TODO handle exception
-            e.printStackTrace();
+            logger.error("jnotify error", e);
         }
 
 

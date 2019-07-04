@@ -32,6 +32,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/net.contentobjects.jnotify/jnotify -->
+        <dependency>
+            <groupId>net.contentobjects.jnotify</groupId>
+            <artifactId>jnotify</artifactId>
+            <version>0.94</version>
+        </dependency>
+
     </dependencies>
 
     <build>

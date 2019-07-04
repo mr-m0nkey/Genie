@@ -2,26 +2,24 @@ package genie;
 
 import genie.models.json.FileImage;
 import genie.models.json.RootDirectories;
-import genie.util.CommandComparator;
+import genie.publishers.IncomingCommandEventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.nio.file.*;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
 @Service
 public class ScheduledTasks {
 
 
+    @Autowired
+    IncomingCommandEventPublisher incomingCommandEventPublisher;
 
     @Autowired
-    private Queue<Command> commandsToExecute;
+    private OutgoingCommands outgoingCommands;
+
+    @Autowired
+    private IncomingCommands incomingCommands;
 
 
     @Autowired
@@ -31,7 +29,14 @@ public class ScheduledTasks {
     public void syncWithServer() {
         getCommandsFromServer();
         sendCommandsToServer();
+        executeCommands();
+    }
 
+    @Async
+    private void executeCommands() {
+        incomingCommands.getStream().forEach(command -> {
+            incomingCommandEventPublisher.publish(command);
+        });
     }
 
     private void getCommandsFromServer() {

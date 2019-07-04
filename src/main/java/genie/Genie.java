@@ -8,23 +8,20 @@ package genie;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import genie.models.json.FileImage;
 import genie.models.json.RootDirectories;
-import genie.util.CommandComparator;
-import net.contentobjects.jnotify.JNotify;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.logging.Logger;
@@ -76,6 +73,11 @@ public class Genie {
     }
 
     @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
     public RootDirectories getRootDirectories() {
         RootDirectories rootDirectories = new RootDirectories();
         try {
@@ -91,18 +93,10 @@ public class Genie {
         return rootDirectories;
     }
 
-    @Bean
-    public Queue<Command> getCommandQueue() {
-        //commands are stored in a priority queue sorted by date so they are executed in a chronological order
-        Queue<Command> commandsToExecute = new PriorityQueue(new CommandComparator());
-        return commandsToExecute;
-    }
-
-
-
     private RootDirectories initializeRootDirectories() throws IOException, ExecutionException, InterruptedException {
         String pathToRootDirectoriesJson = System.getProperty("user.dir") + "/root.json";
         File rootJson = new File(pathToRootDirectoriesJson);
+        //TODO compare old and new roots
         if(rootJson.createNewFile()) {
             mapper.writeValue(rootJson, new RootDirectories());
         }

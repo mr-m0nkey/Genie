@@ -6,7 +6,6 @@
 package genie;
 
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Queue;
@@ -18,7 +17,7 @@ import java.util.Queue;
  */
 @Service
 public class Tunnel {
-    
+
     Queue<Command> commands;
     
     /**

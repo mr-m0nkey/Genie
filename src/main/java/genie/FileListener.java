@@ -3,25 +3,28 @@ package genie;
 import genie.enums.COMMAND_TYPE;
 import genie.models.json.RootDirectories;
 import net.contentobjects.jnotify.JNotifyListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
-import java.util.Queue;
 
 class FileListener implements JNotifyListener {
 
     @Autowired
     RootDirectories rootDirectories;
 
-    @Autowired
-    Queue<Command> commandQueue;
+    private static final Logger logger = LoggerFactory.getLogger(FileListener.class);
 
     @Autowired
     Tunnel tunnel;
-
+    @Autowired
+    OutgoingCommands outgoingCommands;
 
     public void fileRenamed(int wd, String rootPath, String oldName, String newName) {
-        print("renamed " + rootPath + " : " + oldName + " -> " + newName);
+
+        String logMessage = String.format("renamed %s : %s -> %s", rootPath, oldName, newName);
+        logger.info(logMessage);
 
         Command command = new Command();
 
@@ -35,13 +38,14 @@ class FileListener implements JNotifyListener {
         String newFilePath = getFilePath(rootPath, newName);
         command.setFilePath(newFilePath);
 
-        commandQueue.add(command);
+        outgoingCommands.pushAndSave(command);
 
     }
 
     public void fileModified(int wd, String rootPath, String name) {
+        String logMessage = String.format("modified %s : %s", rootPath, name);
 
-        print("modified " + rootPath + " : " + name);
+        logger.info(logMessage);
 
         Command command = new Command();
 
@@ -52,14 +56,15 @@ class FileListener implements JNotifyListener {
         String filePath = getFilePath(rootPath, name);
         command.setFilePath(filePath);
 
-        commandQueue.add(command);
+        outgoingCommands.pushAndSave(command);
 
 
     }
 
     public void fileDeleted(int wd, String rootPath, String name) {
 
-        print("deleted " + rootPath + " : " + name);
+        String logMessage = String.format("deleted %s : %s", rootPath, name);
+        logger.info(logMessage);
 
         Command command = new Command();
 
@@ -70,12 +75,13 @@ class FileListener implements JNotifyListener {
         String filePath = getFilePath(rootPath, name);
         command.setFilePath(filePath);
 
-        commandQueue.add(command);
+        outgoingCommands.pushAndSave(command);
     }
 
     public void fileCreated(int wd, String rootPath, String name) {
 
-        print("created " + rootPath + " : " + name);
+        String logMessage = String.format("created %s : %s", rootPath, name);
+        logger.info(logMessage);
 
         Command command = new Command();
 
@@ -86,16 +92,13 @@ class FileListener implements JNotifyListener {
         String filePath = getFilePath(rootPath, name);
         command.setFilePath(filePath);
 
-        commandQueue.add(command);
+        outgoingCommands.pushAndSave(command);
 
-    }
-
-    void print(String msg) {
-        System.err.println(msg);
     }
 
     private String getFilePath(String rootPath, String name) {
-
+        String logMessage = String.format("get file path of %s -> %s", rootPath, name);
+        logger.info(logMessage);
         return "";
     }
 
