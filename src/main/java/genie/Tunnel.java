@@ -36,9 +36,7 @@ public class Tunnel {
     @Async
     public void loop() {
         while(!commands.isEmpty()) {
-            if(commands.peek().perform()) {
-                commands.remove();
-            }
+            commands.peek().perform();
         }
     }
 }

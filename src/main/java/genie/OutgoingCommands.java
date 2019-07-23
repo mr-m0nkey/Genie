@@ -1,12 +1,12 @@
 package genie;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class OutgoingCommands extends CommandQueue {
 
     public OutgoingCommands() {
-        //TODO get commands from storage to populate outgoing commands
+
     }
 
 }

@@ -14,7 +14,6 @@ public class IncomingCommandEventPublisher {
     private ApplicationEventPublisher applicationEventPublisher;
 
     public void publish(final Command command) {
-        System.out.println("Publishing custom event. ");
         IncomingCommandEvent incomingCommandEvent = new IncomingCommandEvent(this, command);
         applicationEventPublisher.publishEvent(incomingCommandEvent);
     }

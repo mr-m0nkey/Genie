@@ -3,15 +3,14 @@ package genie.models.json;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.io.File;
-import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RootDirectories {
 
-    private Map<String, FileImage> directories;
+    private Map<String, FileImage> directories = new HashMap<>();
 
     public Map<String, FileImage> getDirectories() {
         return directories;
@@ -29,7 +28,6 @@ public class RootDirectories {
     @JsonIgnore
     public void addFile() {
        System.out.println("Adding file to root directory");
-        //System.out.println(file.getPath() + " : " + file.getName());
     }
 
 }

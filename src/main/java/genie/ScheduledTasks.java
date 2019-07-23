@@ -1,6 +1,5 @@
 package genie;
 
-import genie.models.json.FileImage;
 import genie.models.json.RootDirectories;
 import genie.publishers.IncomingCommandEventPublisher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,16 +39,12 @@ public class ScheduledTasks {
     }
 
     private void getCommandsFromServer() {
-
+        //TODO implement
     }
 
     private void sendCommandsToServer() {
-
+        //TODO implement
     }
 
-    private FileImage scanCurrentFileImage() {
-
-        return new FileImage();
-    }
 
 }
