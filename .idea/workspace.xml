@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6416e3c1-a061-4ab9-8b66-458e47fe7f0f" name="Default" comment="basic tests">
+    <list default="true" id="6416e3c1-a061-4ab9-8b66-458e47fe7f0f" name="Default" comment="restart">
+      <change afterPath="$PROJECT_DIR$/src/main/java/genie/constants/FilesystemConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/genie/eventlisteners/ApplicationStart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/genie/exceptions/NotADirectoryException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/genie/interfaces/FileSystemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/genie/models/FileModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/genie/services/FilesystemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/file-1/fff/gdr.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/FileImageBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/Genie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/genie/Genie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/Terminal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/genie/Tunnel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/aaa.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,32 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/Store.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="160">
+              <caret line="34" column="368" selection-start-line="34" selection-start-column="368" selection-end-line="34" selection-end-column="368" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,19 +45,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/root.json">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/services/FilesystemServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" selection-end-line="30" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
+            <state relative-caret-position="220">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,49 +56,86 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="15">
-                <caret line="1" selection-start-line="1" selection-end-line="1" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/exceptions/HiddenFileNotFoundException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/exceptions/ServiceException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test.txt">
+        <entry file="file://$PROJECT_DIR$/test/file-1/fff/gdr.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/interfaces/FileSystemService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="90">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/constants/FilesystemConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.1.5.RELEASE/spring-test-5.1.5.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestExecutionCallbacks.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.1.5.RELEASE/spring-test-5.1.5.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/FileModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+                <element signature="e#298#299#0" expanded="true" />
+                <element signature="e#349#350#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/genie/exceptions/NotADirectoryException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -151,16 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonFileRepresentation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/FileImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonDirectory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/RootDirectories.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Terminal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Util.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/util/DateComparator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/util/CommandComparator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/ThreadConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/MyThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Test2.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/AsynchronousService.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Test.java" />
@@ -193,15 +205,25 @@
         <option value="$PROJECT_DIR$/src/main/java/genie/Tunnel.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/services/SystemService.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/config/FileSystemConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
-        <option value="$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/exceptions/HiddenFileNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/exceptions/ServiceException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/Genie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/ApplicationStart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/eventlisteners/ApplicationStart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/interfaces/FileSystemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/constants/FilesystemConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/exceptions/NotADirectoryException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/models/FileJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/models/FileSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/interfaces/FileSystemService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/services/FilesystemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genie/models/FileModel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java" />
       </list>
     </option>
   </component>
@@ -225,7 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,7 +287,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="genie" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="genie" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
@@ -298,10 +328,29 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="genie" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="file-1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="file-1" type="462c0819:PsiDirectoryNode" />
+              <item name="fff" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -337,7 +386,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FilesystemTest.generated_json_file_is_correct">
+  <component name="RunManager" selected="JUnit.FilesystemTest.can_create_file_system_json_file">
     <configuration name="Genie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -358,11 +407,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilesystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Genie" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="genie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="genie" />
+      <option name="MAIN_CLASS_NAME" value="genie.FilesystemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilesystemTest.can_create_file_system_json_file" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Genie" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="genie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="genie" />
+      <option name="MAIN_CLASS_NAME" value="genie.FilesystemTest" />
+      <option name="METHOD_NAME" value="can_create_file_system_json_file" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Genie" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="genie.eventlisteners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -379,7 +461,7 @@
       <module name="Genie" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="genie.*" />
+          <option name="PATTERN" value="genie.eventlisteners.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -410,10 +492,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FilesystemTest.can_create_file_system_json_file" />
+        <item itemvalue="JUnit.FilesystemTest" />
         <item itemvalue="JUnit.FilesystemTest.generated_json_file_is_correct" />
         <item itemvalue="JUnit.FilesystemTest.creates_genie_file_in_new_root_directory" />
-        <item itemvalue="Application.Genie" />
-        <item itemvalue="Application.Genie" />
         <item itemvalue="Application.Genie" />
       </list>
     </recent_temporary>
@@ -506,33 +588,46 @@
       <option name="project" value="LOCAL" />
       <updated>1564781587833</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="restart">
+      <created>1565696898551</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565696898551</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 03m 40s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest - 2019.08.13 at 14h 17m 24s.xml">
+      <configuration name="FilesystemTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 06m 07s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest - 2019.08.13 at 14h 18m 31s.xml">
+      <configuration name="FilesystemTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 06m 30s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest - 2019.08.13 at 14h 18m 57s.xml">
+      <configuration name="FilesystemTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 06m 43s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 23m 07s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 08m 48s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 24m 41s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 10m 16s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 33m 52s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_creates_genie_file_in_new_root_directory - 2019.07.23 at 14h 10m 49s.xml">
-      <configuration name="FilesystemTest.creates_genie_file_in_new_root_directory" configurationId="JUnit" />
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 36m 38s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FilesystemTest_generated_json_file_is_correct - 2019.07.23 at 14h 34m 13s.xml">
-      <configuration name="FilesystemTest.generated_json_file_is_correct" configurationId="JUnit" />
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 37m 02s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 39m 49s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FilesystemTest_can_create_file_system_json_file - 2019.08.13 at 14h 41m 04s.xml">
+      <configuration name="FilesystemTest.can_create_file_system_json_file" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -545,10 +640,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15450644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -558,8 +652,8 @@
       <window_info id="DB Browser" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.6012048" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4795181" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994812" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4795181" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33975902" />
@@ -669,44 +763,25 @@
     <MESSAGE value="refactored" />
     <MESSAGE value="added tests and working in file system service" />
     <MESSAGE value="basic tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic tests" />
+    <MESSAGE value="restart" />
+    <option name="LAST_COMMIT_MESSAGE" value="restart" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/genie/services/FilesystemServiceImpl.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Util.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/util/CommandComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/auth/Discord.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/ThreadConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Test2.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/MyThread.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/AsynchronousService.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE.jar!/org/springframework/core/task/TaskExecutor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/AsyncTask.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/lightbend/play/jnotify/0.94-play-2/jnotify-0.94-play-2.jar!/net/contentobjects/jnotify/JNotify.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-766">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jnotify-lib-0/jnotify-0.94-src.zip!/net/contentobjects/jnotify/JNotifyAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -777,9 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -797,9 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,9 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,9 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,9 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -897,16 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Genie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -927,30 +977,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/root.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="13" selection-end-line="30" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -968,7 +998,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.txt">
+    <entry file="file://$PROJECT_DIR$/test/aaa.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java">
@@ -988,6 +1018,122 @@
             <caret line="1" selection-start-line="1" selection-end-line="1" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Genie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/interfaces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/eventlisteners/ApplicationStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/exceptions/NotADirectoryException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/FileSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/constants/FilesystemConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.1.5.RELEASE/spring-test-5.1.5.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestExecutionCallbacks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.1.5.RELEASE/spring-test-5.1.5.RELEASE.jar!/org/springframework/test/context/junit4/statements/RunAfterTestMethodCallbacks.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/file-1/fff/gdr.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/interfaces/FileSystemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/FileModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genie/services/FilesystemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="34" column="368" selection-start-line="34" selection-start-column="368" selection-end-line="34" selection-end-column="368" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

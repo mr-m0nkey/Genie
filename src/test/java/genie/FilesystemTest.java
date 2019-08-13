@@ -1,9 +1,11 @@
 package genie;
 
-import genie.models.json.RootDirectories;
-import genie.services.FilesystemService;
-import org.junit.After;
-import org.junit.Assert;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import genie.interfaces.FileSystemService;
+import genie.models.FileModel;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,54 +13,29 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Genie.class)
 public class FilesystemTest {
 
+    private final String testFolder = "test";
     @Autowired
-    private FilesystemService filesystemService;
-
-    private String testPath = filesystemService.currentFileSystem + "/test";
-    private File hiddenFile = new File(testPath + "/" + filesystemService.hiddenFileName);
-    private File jsonFile = new File(filesystemService.currentFileSystem + "/" + filesystemService.jsonFileName);
-
+    private FileSystemService filesystemService;
 
     @Test
-    public void creates_genie_file_in_new_root_directory() throws ExecutionException, InterruptedException {
-        File file = new File(testPath);
-        filesystemService.addRootPath(file.getPath(), new RootDirectories());
-
-        Assert.assertTrue(hiddenFile.exists());
-        Assert.assertTrue(hiddenFile.isHidden());
-
-
+    public void can_create_file_system_json_file() {
+        File baseDirectory = new File(testFolder);
+        FileModel fileSystem = filesystemService.getFileSystem(baseDirectory);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            Assertions
+                    .assertThat(mapper.writeValueAsString(fileSystem))
+                    .isEqualTo("{\"name\":\"test\",\"content\":[{\"name\":\"file-1\",\"content\":[{\"name\":\"file-1.txt\",\"content\":[],\"directory\":false},{\"name\":\"fff\",\"content\":[{\"name\":\"gdr.txt\",\"content\":[],\"directory\":false}],\"directory\":true}],\"directory\":true},{\"name\":\"aaa.txt\",\"content\":[],\"directory\":false}],\"directory\":true}");
+        } catch (JsonProcessingException e) {
+            Assertions.fail(e.getMessage());
+        }
     }
 
-    @Test
-    public void generated_json_file_is_correct() throws InterruptedException, ExecutionException, IOException {
-
-
-        filesystemService.addRootToJsonFile(new RootDirectories(), testPath);
-        Assert.fail("Check if file content is correct");
-        Assert.fail("Check if file content is same as root directory object");
-
-    }
-
-    @Test
-    public void throws_an_exception_when_the_genie_file_is_missing_from_the_root_directory() {
-
-    }
-
-    @After
-    public void cleanup() {
-
-        hiddenFile.delete();
-        jsonFile.delete();
-
-    }
 
 
 }
