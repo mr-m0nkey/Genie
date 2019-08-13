@@ -30,10 +30,12 @@ public class FilesystemTest {
         try {
             Assertions
                     .assertThat(mapper.writeValueAsString(fileSystem))
-                    .isEqualTo("{\"name\":\"test\",\"content\":[{\"name\":\"file-1\",\"content\":[{\"name\":\"file-1.txt\",\"content\":[],\"directory\":false},{\"name\":\"fff\",\"content\":[{\"name\":\"gdr.txt\",\"content\":[],\"directory\":false}],\"directory\":true}],\"directory\":true},{\"name\":\"aaa.txt\",\"content\":[],\"directory\":false}],\"directory\":true}");
+                    .isEqualTo("{\"name\":\"test\",\"content\":[{\"name\":\"file-1\",\"content\":[{\"name\":\"file-1.txt\",\"content\":[],\"directory\":false},{\"name\":\"fff\",\"content\":[{\"name\":\"gdr.txt\",\"content\":[],\"directory\":false}],\"directory\":true},{\"name\":\"j\",\"content\":[],\"directory\":true}],\"directory\":true},{\"name\":\"aaa.txt\",\"content\":[],\"directory\":false}],\"directory\":true}");
         } catch (JsonProcessingException e) {
             Assertions.fail(e.getMessage());
         }
+
+
     }
 
 

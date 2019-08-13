@@ -1,5 +1,7 @@
 package genie.models;
 
+import genie.interfaces.FileWatcherService;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,12 +12,13 @@ public class FileModel {
     private String name;
     private List<FileModel> content = new ArrayList<>();
 
-    public FileModel(File file) {
+    public FileModel(File file, FileWatcherService fileWatcherService) {
+        fileWatcherService.watchFiles(file.getAbsolutePath());
         isDirectory = file.isDirectory();
         name = file.getName();
         if (file.isDirectory()) {
             for (File iter : file.listFiles()) {
-                addFile(iter);
+                addFile(iter, fileWatcherService);
             }
         }
     }
@@ -24,26 +27,19 @@ public class FileModel {
         return isDirectory;
     }
 
-    public void setDirectory(boolean directory) {
-        isDirectory = directory;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<FileModel> getContent() {
         return content;
     }
 
-    public void addFile(File file) {
-        FileModel fileModel = new FileModel(file);
-        content.add(fileModel);
+    public void addFile(File file, FileWatcherService fileWatcherService) {
+        if (!file.isHidden()) {
+            FileModel fileModel = new FileModel(file, fileWatcherService);
+            content.add(fileModel);
+        }
     }
-
 
 }

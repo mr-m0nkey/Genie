@@ -2,13 +2,18 @@ package genie.services;
 
 import genie.exceptions.NotADirectoryException;
 import genie.interfaces.FileSystemService;
+import genie.interfaces.FileWatcherService;
 import genie.models.FileModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 
 @Service
 public class FilesystemServiceImpl implements FileSystemService {
+
+    @Autowired
+    private FileWatcherService fileWatcherService;
 
     @Override
     public FileModel getFileSystem(File directory) {
@@ -17,24 +22,17 @@ public class FilesystemServiceImpl implements FileSystemService {
         }
 
 
-        return buildFilesystem(directory);
+        FileModel fileModel = buildFilesystem(directory);
+
+
+        return fileModel;
 
     }
+
 
     private FileModel buildFilesystem(File file) {
-        FileModel fileModel = new FileModel(file);
+        FileModel fileModel = new FileModel(file, fileWatcherService);
         return fileModel;
     }
-
-    void getContent(FileModel fileModel, File file) {
-        if (file.isDirectory()) {
-            for (File fileIter : file.listFiles()) {
-                fileModel.addFile(fileIter);
-                getContent(new FileModel(fileIter), fileIter);
-            }
-        }
-
-    }
-
 
 }
