@@ -13,20 +13,23 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Slf4j
 public class FilesystemServiceImpl implements FileSystemService {
 
+    private Set<String> rootDirectories = new HashSet<>();
+
     @Autowired
     private FileWatcherService fileWatcherService;
 
     @Override
-    public List<String> getRootDirectories() {
-        List<String> directories = new ArrayList<>();
-        directories.add("/Users/majagunna/dumps");
-        return directories;
+    public Set<String> getRootDirectories() {
+        rootDirectories.add("/Users/majagunna/dumps");
+        return rootDirectories;
     }
 
     @Override
@@ -36,6 +39,7 @@ public class FilesystemServiceImpl implements FileSystemService {
         FileModel fileModel = buildFilesystem(directory);
         return fileModel;
     }
+
 
 
     private FileModel buildFilesystem(File file) {
@@ -49,6 +53,7 @@ public class FilesystemServiceImpl implements FileSystemService {
         for(String rootDirectory : getRootDirectories()) {
             if(directoryPath.startsWith(rootDirectory)) throw new RootAlreadyExistsException();
         }
+        rootDirectories.add(directoryPath);
     }
 
     public String getRootFromPath(String absolutePath) throws FileNotFoundException {
