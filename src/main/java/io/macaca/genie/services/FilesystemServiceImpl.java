@@ -1,9 +1,9 @@
-package genie.services;
+package io.macaca.genie.services;
 
-import genie.exceptions.NotADirectoryException;
-import genie.interfaces.FileSystemService;
-import genie.interfaces.FileWatcherService;
-import genie.models.FileModel;
+import io.macaca.genie.exceptions.NotADirectoryException;
+import io.macaca.genie.interfaces.FileSystemService;
+import io.macaca.genie.interfaces.FileWatcherService;
+import io.macaca.genie.models.FileModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,11 +20,7 @@ public class FilesystemServiceImpl implements FileSystemService {
         if (!directory.isDirectory()) {
             throw new NotADirectoryException();
         }
-
-
         FileModel fileModel = buildFilesystem(directory);
-
-
         return fileModel;
 
     }

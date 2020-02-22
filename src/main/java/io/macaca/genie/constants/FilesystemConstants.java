@@ -1,4 +1,4 @@
-package genie.constants;
+package io.macaca.genie.constants;
 
 public class FilesystemConstants {
 

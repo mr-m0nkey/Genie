@@ -3,8 +3,9 @@ package genie;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import genie.interfaces.FileSystemService;
-import genie.models.FileModel;
+import io.macaca.genie.Genie;
+import io.macaca.genie.interfaces.FileSystemService;
+import io.macaca.genie.models.FileModel;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;

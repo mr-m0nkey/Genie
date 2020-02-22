@@ -1,6 +1,6 @@
-package genie.interfaces;
+package io.macaca.genie.interfaces;
 
-import genie.models.FileModel;
+import io.macaca.genie.models.FileModel;
 
 import java.io.File;
 

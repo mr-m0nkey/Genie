@@ -1,6 +1,6 @@
-package genie.services;
+package io.macaca.genie.services;
 
-import genie.interfaces.FileWatcherService;
+import io.macaca.genie.interfaces.FileWatcherService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

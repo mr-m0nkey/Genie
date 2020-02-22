@@ -1,6 +1,6 @@
-package genie.models;
+package io.macaca.genie.models;
 
-import genie.interfaces.FileWatcherService;
+import io.macaca.genie.interfaces.FileWatcherService;
 
 import java.io.File;
 import java.util.ArrayList;

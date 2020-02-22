@@ -1,4 +1,4 @@
-package genie.interfaces;
+package io.macaca.genie.interfaces;
 
 public interface FileWatcherService {
 
