@@ -1,4 +1,4 @@
 package io.macaca.genie.exceptions;
 
-public class NotADirectoryException extends RuntimeException {
+public class NotADirectoryException extends ServiceException {
 }

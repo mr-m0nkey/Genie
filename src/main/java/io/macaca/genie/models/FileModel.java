@@ -35,7 +35,7 @@ public class FileModel {
         return content;
     }
 
-    public void addFile(File file, FileWatcherService fileWatcherService) {
+    private void addFile(File file, FileWatcherService fileWatcherService) {
         if (!file.isHidden()) {
             FileModel fileModel = new FileModel(file, fileWatcherService);
             content.add(fileModel);
