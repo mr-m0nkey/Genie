@@ -67,7 +67,7 @@ public class FileModel {
                     content.add(fileModel);
                     DataUtil.addModel(childPath, fileModel);
                     if(childFile.isDirectory()){
-                        //TODO add to database for job to pick
+                        DataUtil.watchFiles.add(childPath);
                     }
                 }
             }
