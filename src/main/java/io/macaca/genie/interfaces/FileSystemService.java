@@ -1,5 +1,6 @@
 package io.macaca.genie.interfaces;
 
+import io.macaca.genie.entities.RootDirectory;
 import io.macaca.genie.models.FileModel;
 
 import java.io.File;
@@ -11,7 +12,7 @@ public interface FileSystemService {
 
     FileModel getFileSystem(File directory);
 
-    Set<String> getRootDirectories();
+    List<RootDirectory> getRootDirectories();
 
     String getRootFromPath(String absolutePath) throws FileNotFoundException;
 }

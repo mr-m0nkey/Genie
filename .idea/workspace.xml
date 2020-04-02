@@ -2,58 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6416e3c1-a061-4ab9-8b66-458e47fe7f0f" name="Default" comment="refactored">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/Genie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/config/AsyncConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/config/FileSystemConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/constants/FilesystemConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/eventlisteners/ApplicationStart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/exceptions/NotADirectoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/exceptions/RootAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/exceptions/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileSystemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileWatcherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/models/FileModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FileWatcherServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FilesystemServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/file-1/fff/gdr.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/entities/RootDirectory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genie.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/CommandQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/FileImageBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/Genie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/IncomingCommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/OutgoingCommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/ScheduledTasks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/Store.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/Terminal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/Tunnel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/config/FileSystemConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/enums/COMMAND_TYPE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/events/IncomingCommandEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/exceptions/HiddenFileNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/exceptions/ServiceException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/listeners/IncomingCommandEventListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/FileImage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/JsonFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/models/pojos/DeviceDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/publishers/IncomingCommandEventPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/services/SystemService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/genie/util/CommandComparator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/genie/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/genie/FileImageBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/genie/Genie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/genie/Store.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/genie/Terminal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/genie/Tunnel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/aaa.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/macaca/genie/Genie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/Genie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FilesystemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FilesystemServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,7 +22,77 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Genie.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/Genie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilesystemServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FilesystemServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RootDirectoryRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/repository/RootDirectoryRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileSystemService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileSystemService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RootDirectory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/entities/RootDirectory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+              <folding>
+                <element signature="e#185#186#0" expanded="true" />
+                <element signature="e#211#212#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,6 +111,7 @@
       <find>add a</find>
       <find>untit</find>
       <find>readva</find>
+      <find>rootDirectories</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -100,12 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonFileRepresentation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonFileRepresentation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/FileImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/JsonDirectory.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/JsonModels/RootDirectories.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Terminal.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/Util.java" />
@@ -151,6 +170,12 @@
         <option value="$PROJECT_DIR$/src/test/java/genie/FilesystemTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/models/json/RootDirectories.java" />
         <option value="$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileSystemService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/io/macaca/genie/repository/RootDirectoryRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/macaca/genie/entities/RootDirectory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FilesystemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/macaca/genie/Genie.java" />
       </list>
     </option>
   </component>
@@ -179,46 +204,64 @@
         <subPane>
           <expand>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Genie" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="genie" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="genie" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="genie" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="genie" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Genie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="genie" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -227,9 +270,11 @@
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Genie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="genie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Genie" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,7 +315,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FilesystemTest.generated_json_file_is_correct">
+  <component name="RunManager" selected="Application.Genie (1)">
+    <configuration name="Genie (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.macaca.genie.Genie" />
+      <module name="genie" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.macaca.genie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Genie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -382,12 +438,13 @@
       <item itemvalue="Application.Genie" />
       <item itemvalue="JUnit.FilesystemTest.creates_genie_file_in_new_root_directory" />
       <item itemvalue="JUnit.FilesystemTest.generated_json_file_is_correct" />
+      <item itemvalue="Application.Genie (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Genie (1)" />
         <item itemvalue="JUnit.FilesystemTest.generated_json_file_is_correct" />
         <item itemvalue="JUnit.FilesystemTest.creates_genie_file_in_new_root_directory" />
-        <item itemvalue="Application.Genie" />
         <item itemvalue="Application.Genie" />
         <item itemvalue="Application.Genie" />
       </list>
@@ -507,9 +564,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1536" height="864" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33975902" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.31617647" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -517,7 +576,7 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4795181" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32843137" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2421875" />
@@ -528,7 +587,6 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994812" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.31686747" />
       <window_info anchor="bottom" id="SonarLint" order="12" weight="0.33734939" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
@@ -621,27 +679,12 @@
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/invoke/LambdaForm.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/dbnavigator.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Network.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/Util.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/util/CommandComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genie/auth/Discord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/ThreadConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/Test2.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/MyThread.java" />
@@ -695,13 +738,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/models/pojos/DeviceDetails.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/Store.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -815,6 +851,61 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genie/services/FilesystemService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/interfaces/FileSystemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/repository/RootDirectoryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="84" selection-start-line="7" selection-start-column="84" selection-end-line="7" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/entities/RootDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/services/FilesystemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/macaca/genie/Genie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
