@@ -2,6 +2,7 @@ package io.macaca.genie.util;
 
 import io.macaca.genie.models.FileModel;
 
+import java.nio.file.WatchService;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,11 @@ public class DataUtil {
     public static Map<String, FileModel> map =  new ConcurrentHashMap<>();
 
     public static Set<String> watchFiles = ConcurrentHashMap.newKeySet();
+
+    public static Set<String> unwatchFiiles =  ConcurrentHashMap.newKeySet();
+
+    public static Map<String, WatchService> watcherMap = new ConcurrentHashMap<>();
+
 
 
     public static void addModel(String path, FileModel fileModel) {

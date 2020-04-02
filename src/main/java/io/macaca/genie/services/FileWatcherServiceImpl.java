@@ -18,8 +18,6 @@ import java.util.Map;
 @Slf4j
 public class FileWatcherServiceImpl{
 
-    private static Map<WatchService, String> watcherMap = new HashMap<>();
-
     @Autowired
     private FileSystemService fileSystemService;
 
@@ -29,7 +27,7 @@ public class FileWatcherServiceImpl{
         try {
             log.info("Watching: " + filePath);
             WatchService watchService = FileSystems.getDefault().newWatchService();
-            watcherMap.put(watchService, filePath);
+            DataUtil.watcherMap.put(filePath, watchService);
 
             Path path = Paths.get(filePath);
             path.register(
@@ -46,9 +44,13 @@ public class FileWatcherServiceImpl{
                 }
                 key.reset();
             }
-        } catch (Exception e) {
+        } catch (ClosedWatchServiceException e) {
+            log.info("Watch service has been closed for " + filePath);
+        } catch(Exception e) {
             log.error("Watcher error", e);
         }
+
+        log.warn("Done");
 
 
     }
@@ -61,9 +63,9 @@ public class FileWatcherServiceImpl{
         try {
             String root  = fileSystemService.getRootFromPath(file);
 
+            //TODO refactor
             if (event.kind().equals(StandardWatchEventKinds.ENTRY_CREATE)) {
 
-//                handleCreateEvent(file, root, event.context().toString());
                 DataUtil.map.get(file).modifiedHandler(this);
                 String aaa = file + "/" + event.context().toString();
                 DataUtil.map.get(aaa).modifiedHandler(this);
@@ -78,7 +80,6 @@ public class FileWatcherServiceImpl{
             } else if (event.kind().equals(StandardWatchEventKinds.ENTRY_DELETE)) {
                 DataUtil.map.get(file).modifiedHandler(this);
                 String aaa = file + "/" + event.context().toString();
-                DataUtil.map.get(aaa).modifiedHandler(this);
 
             } else {
                 log.warn("Overflow");

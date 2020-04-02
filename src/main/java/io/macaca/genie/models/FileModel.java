@@ -78,9 +78,11 @@ public class FileModel {
                     content.remove(DataUtil.map.get(path));
                     DataUtil.map.remove(path);
                     log.info("removed: " + path);
+                    DataUtil.unwatchFiiles.add(path);
                     DataUtil.map.keySet().stream().forEach(key -> {
                         if(key.startsWith(path)) {
                             DataUtil.map.remove(key);
+                            DataUtil.unwatchFiiles.add(key);
                             log.info("removed: " + key);
                         }
                     });
