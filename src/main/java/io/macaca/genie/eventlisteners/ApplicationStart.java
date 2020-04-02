@@ -26,7 +26,7 @@ public class ApplicationStart implements ApplicationListener<ContextRefreshedEve
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        //log.info("Application starting...");
+        log.info("Application starting...");
         Map<String, FileModel> filemodels = new HashMap<>();
         List<String> rootDirectories = fileSystemService.getRootDirectories().stream().map(RootDirectory::getPath).collect(Collectors.toList());
 

@@ -7,6 +7,7 @@ import io.macaca.genie.interfaces.FileSystemService;
 import io.macaca.genie.interfaces.FileWatcherService;
 import io.macaca.genie.models.FileModel;
 import io.macaca.genie.repository.RootDirectoryRepository;
+import io.macaca.genie.util.DataUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -26,7 +27,7 @@ public class FilesystemServiceImpl implements FileSystemService {
 
 
     @Autowired
-    private FileWatcherService fileWatcherService;
+    private FileWatcherServiceImpl fileWatcherService;
 
     @Autowired
     private RootDirectoryRepository rootDiectoryRepository;
@@ -36,10 +37,17 @@ public class FilesystemServiceImpl implements FileSystemService {
         return rootDiectoryRepository.findAll();
     }
 
+    public List<String> getRootPaths() {
+        return getRootDirectories()
+                .stream()
+                .map(RootDirectory::getPath)
+                .collect(Collectors.toList());
+    }
+
     @Override
     public FileModel getFileSystem(File directory) {
         if (!directory.isDirectory()) throw new NotADirectoryException();
-        //log.info("Getting filesystem for " + directory);
+        log.info("Getting filesystem for " + directory);
         FileModel fileModel = buildFilesystem(directory);
         return fileModel;
     }
@@ -48,6 +56,8 @@ public class FilesystemServiceImpl implements FileSystemService {
 
     private FileModel buildFilesystem(File file) {
         FileModel fileModel = new FileModel(file, fileWatcherService);
+        fileWatcherService.watchFiles(file.getPath());
+        DataUtil.addModel(file.getPath(), fileModel);
         return fileModel;
     }
 
